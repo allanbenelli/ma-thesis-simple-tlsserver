@@ -1,0 +1,30 @@
+[package]
+name = "testserver"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[features]
+default = ["logging"]
+logging = ["log"]
+dangerous_configuration = ["rustls/dangerous_configuration"]
+quic = ["rustls/quic"]
+
+[dependencies]
+proc-macro2 = "1.0.26"
+log = { version = "0.4.4", optional = true }
+rustls = "0.20.2"
+rustls-pemfile = "0.3.0"
+sct = "0.7"
+serde_derive = "1.0"
+ct-logs = "0.9"
+docopt = "~1.1"
+env_logger = "0.9.0"
+mio = { version = "0.8", features = ["net", "os-poll"] }
+regex = "1.0"
+serde = "1.0"
+webpki-roots = "0.22"
+ring = "0.16.20"
+http_req = "0.8.1"
